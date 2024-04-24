@@ -18,7 +18,7 @@ const Login = () => {
 
   const onSubmit = async (data) => {
     // TODO: Hide real url
-    await axios.post(apiURL + 'auth/signin', {
+    await axios.post(apiURL + '/auth/signin', {
       email: data.email,
       password: data.password
     }).then(res => {
@@ -29,7 +29,7 @@ const Login = () => {
         navigate('/dashboard/inicio');
       }
     }).catch(err => {
-        toast.error(err.response.data.message || 'Error al iniciar sesión.');
+        toast.error(err.response?.data.message || 'Error al iniciar sesión.');
     })
   }
 
@@ -50,7 +50,7 @@ const Login = () => {
         </div>
         <TextInput className="form-input w-full"
           type='password' {...register('password', { required: true })} placeholder='Contraseña'
-          error={errors.email} errorMessage='La Contraseña es Requerida.' icon={RiLockLine}/>
+          error={errors.password} errorMessage='La Contraseña es Requerida.' icon={RiLockLine}/>
         <Button className='bg-grayscale-500 hover:bg-grayscale-400 border-grayscale-500 hover:border-grayscale-500 mt-4' icon={RiLoginBoxLine} variant='primary' type='submit'>
           Iniciar Sesión
         </Button>

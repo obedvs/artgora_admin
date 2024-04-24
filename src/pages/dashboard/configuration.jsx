@@ -37,9 +37,9 @@ const DashboardConfiguration = () => {
     }
     
     return (
-        <section className='w-full h-full p-8'>
+        <section className='flex flex-col items-center w-full h-full p-4'>
             <Metric className='mb-4 text-center'>Configuración</Metric>
-            <Card className='md:w-1/2 w-full p-4'>
+            <Card className='w-full max-w-xl p-4'>
                 <Title className='mb-2 text-center'>Cambiar Contraseña</Title>
                 <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col justify-center w-full bg-transparent">
 

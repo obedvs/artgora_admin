@@ -10,3 +10,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .image-input {
+    @apply text-grayscale-500 bg-tremor-background border-tremor-border p-2 border-2 rounded-[14px] max-w-full;
+  }
+  .image-input[type=file]::file-selector-button {
+    @apply mr-5 border-0 bg-tremor-brand text-grayscale-100 px-5 py-2 rounded-md cursor-pointer transition-colors duration-200 ease-in-out hover:bg-tremor-brand-emphasis;
+  }
+  .nav-link-active {
+    @apply bg-grayscale-500 text-grayscale-200;
+  }
+  .nav-link-default {
+    @apply hover:bg-grayscale-200 text-grayscale-500;
+  }
+  .nav-link {
+    @apply size-14 flex flex-col justify-center items-center font-medium rounded-md cursor-pointer transition-colors;
+  }
+  .nav-link-default .text {
+    @apply hidden;
+  }
+  .nav-link .text {
+    font-size: 8px;
+  }
+}
