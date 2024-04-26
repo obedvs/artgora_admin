@@ -1,15 +1,14 @@
 import React, { Suspense, lazy, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
-import { Button, Callout, Card, Metric, TextInput } from "@tremor/react";
-import { RiErrorWarningLine, RiSearchLine, RiUserAddLine } from "@remixicon/react";
-import { apiURL } from "../../config/apiurl.jsx";
-import { Loading } from "../../components/loading.jsx";
+import { Callout, Card, Metric, TextInput } from "@tremor/react";
+import { RiErrorWarningLine, RiSearchLine } from "@remixicon/react";
+import { apiURL } from "../../config/apiurl";
+import { Loading } from "../../components/loading";
 
-const Expositor = lazy(() => import('../../components/expositor.jsx'));
+const Expositor = lazy(() => import('../../components/expositorImagenes.jsx'));
 
 
-const Expositores = () => {
+const Imagenes = () => {
 
     const [expositores, setExpositores] = useState([]);
     const [isloading, setIsLoading] = useState(true);
@@ -41,15 +40,12 @@ const Expositores = () => {
 
     return (
         <section className='flex flex-col items-center w-full h-full p-2'>
-            <Metric className='mb-4 text-center'>Expositores</Metric>
+            <Metric className='mb-4 text-center'>Imágenes de Expositores</Metric>
             <Card className='w-full p-4'>
                 <div className="flex items-center justify-around mb-2">
                     <form className="w-full">
                     <TextInput className="form-input w-full" icon={RiSearchLine} placeholder="Buscar Expositor..." onChange={(e) => setSearchText(e.target.value)} value={searchText}/>
                     </form>
-                    <Link to='agregar'>
-                        <Button className='ml-2 bg-grayscale-500 hover:bg-grayscale-400 border-grayscale-500 hover:border-grayscale-500 h-[54px] pl-6 sm:pl-4' icon={RiUserAddLine} variant='primary'><span className="sm:inline-block hidden">Nuevo Expositor</span></Button>
-                    </Link>
                 </div>
                 <div className="w-full">
                 {isloading ? <Loading /> : expositoresFiltrados.length > 0 ? (
@@ -65,4 +61,4 @@ const Expositores = () => {
     )
 }
 
-export default Expositores;
+export default Imagenes;

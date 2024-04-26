@@ -1,5 +1,5 @@
 import { RiDeleteBinLine, RiEdit2Line } from "@remixicon/react";
-import { Button, Card, Title } from "@tremor/react";
+import { Button, Card, Subtitle } from "@tremor/react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
@@ -9,7 +9,7 @@ const Expositor = ({expositor}) => {
 
     const handleDelete = () => {
         Swal.fire({
-            title: "¿Estás seguro de eliminar este expositor?",
+            title: "¿Estás seguro/a de eliminar este Expositor?",
             text: "No podrás revertir esto.",
             icon: "warning",
             showCancelButton: true,
@@ -34,7 +34,7 @@ const Expositor = ({expositor}) => {
             <div className="flex items-center w-full">
                 <img src={expositor.perfil} alt={expositor.nombre} className="object-cover w-12 h-12 rounded-full"/>
                 {/* <div className="ml-2 leading-3"> */}
-                    <Title className='overflow-ellipsis ml-2 overflow-hidden'>{expositor.nombre}</Title>
+                    <Subtitle className='overflow-ellipsis ml-2 overflow-hidden'>{expositor.nombre}</Subtitle>
                     {/* <p className='text-sm'>{expositor.sobreNombre}</p> */}
                 {/* </div> */}
             </div>

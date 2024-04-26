@@ -9,11 +9,10 @@ import { toast } from "sonner";
 
 const EditarExpositor = () => {
 
-    const params = useParams();
+    const { expositorId } = useParams();
     const navigate = useNavigate();
     const userName = localStorage.getItem('userName');
-
-    const { expositorId } = params;
+    
     const [expositor, setExpositor] = useState({});
 
     const { register, handleSubmit, formState: { errors } } = useForm({
@@ -66,7 +65,7 @@ const EditarExpositor = () => {
 
     return (
         <section className='flex flex-col items-center w-full h-full p-2'>
-        <Metric className='mb-4 text-center'>Editar Expositor</Metric>
+        <Metric className='mb-4 text-center'>Actualizar Expositor</Metric>
         <Card className='w-full p-4'>
             <form onSubmit={handleSubmit(onSubmit)} className='w-full'>
             <div className='grid grid-cols-1 gap-4'>
