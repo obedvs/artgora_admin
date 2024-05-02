@@ -35,7 +35,7 @@ const EditarImagen = () => {
         formData.append('medidas', data.medidas);
         formData.append('editor', userName);
         
-        await axios.patch(apiURL + '/imagenes/' + imagenId, formData)
+        await axios.patch(apiURL + '/imagenes/protectedupdateroute/update/' + imagenId, formData)
         .then(res => {
         if (res.status === 200) {
             toast.success(`Se ha actualizado la imagen: ${data.nombre} correctamente.`);

@@ -20,7 +20,7 @@ const Expositor = ({expositor}) => {
         }).then( async (result) => {
             if (result.isConfirmed) {
                 try {
-                    await axios.delete(apiURL + '/artists/' + expositor._id);
+                    await axios.delete(apiURL + '/artists/protecteddeleteroute/delete/' + expositor._id);
                     Swal.fire("Expositor Eliminado", "", "success").then(() => window.location.reload());
                 } catch (error) {
                     toast.error(error.response.data.message || 'Error al eliminar el expositor.');

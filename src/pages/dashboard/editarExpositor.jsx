@@ -16,7 +16,7 @@ const EditarExpositor = () => {
     const [expositor, setExpositor] = useState({});
 
     const { register, handleSubmit, formState: { errors } } = useForm({
-        defaultValues: async () => (await axios.get(apiURL + '/artists/' + expositorId)
+        defaultValues: async () => (await axios.get(apiURL + '/artists/protectedupdateroute/update/' + expositorId)
             .then(res => {
                 setExpositor(res.data);
                 return res.data;

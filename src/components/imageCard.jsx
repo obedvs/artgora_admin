@@ -21,7 +21,7 @@ const ImageCard = ({imagen}) => {
         }).then( async (result) => {
             if (result.isConfirmed) {
                 try {
-                    await axios.delete(apiURL + '/imagenes/' + imagen._id);
+                    await axios.delete(apiURL + '/imagenes/protecteddeleteroute/delete/' + imagen._id);
                     Swal.fire("Imagen Eliminada", "", "success").then(() => window.location.reload());
                 } catch (error) {
                     toast.error(error.response.data.message || 'Error al eliminar el expositor.');
