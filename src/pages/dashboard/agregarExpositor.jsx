@@ -32,7 +32,7 @@ const AgregarExpositor = () => {
       }
       })
       .catch(err => {
-        toast.error(err.response.data.message || 'Error al cambiar la contraseña.');
+        toast.error(err.response.data.message || 'Error al agregar el expositor.');
       });
   }
 

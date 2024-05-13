@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
-import { RiGroupFill, RiHome2Fill, RiImageAddFill, RiSettings3Fill } from "@remixicon/react";
+import { RiCalendarEventLine, RiGroupFill, RiHome2Fill, RiImageAddFill, RiSettings3Fill } from "@remixicon/react";
 import { Loading } from "../components/loading";
 import { Navbar, NavbarItem } from "../components/navbar";
 import { Sidebar, SidebarItem } from "../components/sidebar";
@@ -26,8 +26,8 @@ export const ProtectedRoute = () => {
           <SidebarItem icon={RiHome2Fill} text="Inicio" link='inicio' />
           <SidebarItem icon={RiGroupFill} text="Expositores" alert link='expositores' />
           <SidebarItem icon={RiImageAddFill} text="Imágenes" alert link='imagenes' />
-          {/* <SidebarItem icon={<FaCalendarDays size={20} />} text="Eventos" alert />
-          <SidebarItem icon={<FaPenToSquare size={20} />} text="Noticias" alert /> */}
+          <SidebarItem icon={RiCalendarEventLine} text="Eventos" alert link='eventos' />
+          {/* <SidebarItem icon={<FaPenToSquare size={20} />} text="Noticias" alert /> */}
           <hr className="my-3" />
           <SidebarItem icon={RiSettings3Fill} text="Configuración" link='config'/>
         </Sidebar>
@@ -39,6 +39,7 @@ export const ProtectedRoute = () => {
           <NavbarItem icon={RiHome2Fill} text="Inicio" link='inicio' />
           <NavbarItem icon={RiGroupFill} text="Expositores" link='expositores' />
           <NavbarItem icon={RiImageAddFill} text="Imágenes" link='imagenes' />
+          <NavbarItem icon={RiCalendarEventLine} text="Eventos" link='eventos' />
         </Navbar>
       </main>
     )
