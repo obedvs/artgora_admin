@@ -21,7 +21,6 @@ const Eventos = () => {
         axios.get( apiURL + '/events', { cancelToken: cancelToken.token })
             .then(res => {
                 setEventos(res.data.reverse());
-                console.log(res.data);
                 setIsLoading(false);
             })
             .catch (err => {

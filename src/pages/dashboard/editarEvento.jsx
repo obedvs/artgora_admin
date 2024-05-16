@@ -38,15 +38,15 @@ const EditarEvento = () => {
         formData.append('horaFin', data.horaFin);
         formData.append('editor', userName);
         
-        await axios.patch(apiURL + '/imagenes/protectedupdateroute/update/' + imagenId, formData)
+        await axios.patch(apiURL + '/events/protectedupdateroute/update/' + eventoId, formData)
         .then(res => {
         if (res.status === 200) {
-            toast.success(`Se ha actualizado la imagen: ${data.nombre} correctamente.`);
-            navigate(`/dashboard/imagenes/galeria/${imagen.expositorId}/${imagen.expositorNombre}`);
+            toast.success(`Se ha actualizado el evento: ${data.titulo} correctamente.`);
+            navigate('/dashboard/eventos');
         }
         })
         .catch(err => {
-            toast.error(err.response.data.message || 'Error al Actualizar Imagen.');
+            toast.error(err.response.data.message || 'Error al Actualizar Evento.');
         });
     }
 

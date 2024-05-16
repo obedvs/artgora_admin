@@ -14,7 +14,6 @@ const AgregarEvento = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   
   const onSubmit = async (data) => {
-    console.log(data)
     // Enviar archivo con la información del formulario
     const formData = new FormData();
     formData.append('titulo', data.titulo);
