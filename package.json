@@ -5,8 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run generate-html && vite build",
-    "generate-html": "mkdir dist && xcopy index.html dist\\",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
