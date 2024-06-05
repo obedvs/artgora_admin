@@ -16,7 +16,7 @@ const EditarExpositor = () => {
     const [expositor, setExpositor] = useState({});
 
     const { register, handleSubmit, formState: { errors } } = useForm({
-        defaultValues: async () => (await axios.get(apiURL + '/artists/protectedupdateroute/update/' + expositorId)
+        defaultValues: async () => (await axios.get(apiURL + '/artists/' + expositorId)
             .then(res => {
                 setExpositor(res.data);
                 return res.data;
@@ -35,7 +35,7 @@ const EditarExpositor = () => {
         formData.append('email', data.email);
         formData.append('editor', userName);
 
-        await axios.patch(apiURL + '/artists/' + expositorId, formData)
+        await axios.patch(apiURL + '/artists/protectedupdateroute/update/' + expositorId, formData)
             .then(res => {
             if (res.status === 200) {
                 toast.success(`Se ha actualizado el expositor: ${data.nombre} correctamente.`);
