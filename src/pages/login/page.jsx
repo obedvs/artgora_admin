@@ -34,7 +34,7 @@ const Login = () => {
   }
 
   return (
-    <section id='login' className="place-items-center bg-gradient-to-tr from-grayscale-100 to-grayscale-500 grid w-full h-screen">
+    <section id='login' className="place-items-center bg-gradient-to-tr from-grayscale-100 to-grayscale-500 grid w-full h-[100dvh]">
       <Card className="lg:w-1/3 md:w-1/2 sm:w-3/4 bg-grayscale-100/50 backdrop-blur sm:h-auto w-full h-full p-8 shadow-lg">
       <form onSubmit={handleSubmit(onSubmit)} className="sm:h-auto flex flex-col justify-center w-full h-full bg-transparent">
         <Metric className="text-grayscale-500 mb-4 text-2xl font-bold text-center">¡Hola administrador/a!</Metric>

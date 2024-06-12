@@ -31,7 +31,7 @@ export const Navbar = ({ children }) => {
 
 export const NavbarItem = ({ icon, text, link }) => {
   return (
-    <li className="relative flex items-center my-1">
+    <li className="flex items-center my-1">
       <NavLink to={link} className={({ isActive }) => `nav-link ${isActive ? "nav-link-active" : "nav-link-default"}`}>
         <Icon icon={icon} size="sm" color="#FCFCFC"/>
         <span className="text">{text}</span>

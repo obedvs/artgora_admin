@@ -21,7 +21,7 @@ export const ProtectedRoute = () => {
   if (isloading) {return <Loading />}
   else {
     return (
-      <main className="md:flex-row flex flex-col w-full h-screen">
+      <main className="md:flex-row flex flex-col w-full h-[100dvh]">
         <Sidebar >
           <SidebarItem icon={RiHome2Fill} text="Inicio" link='inicio' />
           <SidebarItem icon={RiGroupFill} text="Expositores" alert link='expositores' />
